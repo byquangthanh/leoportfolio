@@ -103,7 +103,7 @@ export default function MainPage() {
         </button>
       </nav>
 
-      <section className="min-h-screen w-full bg-[#FFF8F0] flex items-end justify-center fixed z-0 px-8">
+      <section className="min-h-screen w-full bg-white flex items-end justify-center fixed z-0 px-8">
         <Image src={Logo} alt={"Leo Logo"} className="w-full" />
       </section>
 
