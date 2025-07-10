@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/modules/Navbar";
 import LogoPage from "@/modules/LogoPage";
 import ProjectsSection from "@/modules/ProjectsSection";
+import { BrowserView, isDesktop } from "react-device-detect";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -20,28 +21,26 @@ export default function MainPage() {
     const sections = gsap.utils.toArray(".horizontal-section");
     const images = gsap.utils.toArray(".image");
 
-    gsap.set(images, {
-      opacity: 0,
-    });
+    gsap.fromTo(
+      images,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        ease: "back",
+        duration: 0.8,
 
-    gsap.to(images, {
-      opacity: 1,
-      ease: "back",
-      duration: 0.8,
-
-      delay: 1.5,
-    });
+        delay: 1.5,
+      }
+    );
 
     gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
+      xPercent: -83.334 * (sections.length - 1), // pokud chci rozsirit na dalsi celou sekci tak -100
 
       scrollTrigger: {
         trigger: containerRef.current,
         pin: true,
         scrub: 1,
         end: () => "+=" + (sectionsRef.current?.offsetWidth || 0),
-        markers: false,
         anticipatePin: 1,
       },
     });
@@ -68,8 +67,12 @@ export default function MainPage() {
     <>
       <Navbar />
       <LogoPage />
-
-      <ProjectsSection containerRef={containerRef} sectionsRef={sectionsRef} />
+      <BrowserView>
+        <ProjectsSection
+          containerRef={containerRef}
+          sectionsRef={sectionsRef}
+        />
+      </BrowserView>
     </>
   );
 }
