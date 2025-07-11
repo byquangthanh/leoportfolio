@@ -9,7 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/modules/Navbar";
 import LogoPage from "@/modules/LogoPage";
 import ProjectsSection from "@/modules/ProjectsSection";
-import { BrowserView, isDesktop } from "react-device-detect";
+import { isMobile } from "react-device-detect";
+import ProjectsSectionMobile from "@/modules/ProjectsSectionMobile";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -67,12 +68,15 @@ export default function MainPage() {
     <>
       <Navbar />
       <LogoPage />
-      <BrowserView>
+      <div className="hidden md:block">
         <ProjectsSection
           containerRef={containerRef}
           sectionsRef={sectionsRef}
         />
-      </BrowserView>
+      </div>
+      <div className="block md:hidden">
+        <ProjectsSectionMobile />
+      </div>
     </>
   );
 }

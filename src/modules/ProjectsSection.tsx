@@ -15,7 +15,10 @@ import MNMLPicture from "../../public/assets/mnml.webp";
 import MNMLGIF from "../../public/assets/mnml.gif";
 import HostivioPicture from "../../public/assets/hostivio@2x.webp";
 import HostivioGIF from "../../public/assets/hostivio.gif";
+import notzPicture from "../../public/assets/notz.webp";
+import notzGIF from "../../public/assets/notz.gif";
 import { Ref } from "react";
+import Link from "next/link";
 
 interface ProjectSectionProps {
   containerRef: Ref<HTMLDivElement> | undefined;
@@ -36,8 +39,8 @@ export default function ProjectsSection({
   return (
     <div ref={containerRef} className="relative z-10">
       <div ref={sectionsRef} className="flex w-[350vw]">
-        <section className="horizontal-section min-h-screen w-screen relative z-1">
-          <div>
+        <section className="horizontal-section min-h-screen w-screen relative z-2">
+          <Link href="projects/seventyfour" className="cursor-auto">
             <Image
               alt="Seventyfour picture"
               src={SeventyfourPic}
@@ -50,8 +53,8 @@ export default function ProjectsSection({
                 className="h-[24vw] w-[24vw]  max-h-[700px] max-w-[700px]  left-[5vw] top-[20vh]  cursor-pointer opacity-0 hover:opacity-100 transition-all ease-in absolute"
               />
             )}
-          </div>
-          <div>
+          </Link>
+          <Link href="projects/jun" className="cursor-auto">
             <Image
               alt="Jun picture "
               src={JunPicture}
@@ -64,8 +67,8 @@ export default function ProjectsSection({
                 className="h-[25vw] w-[20vw]  left-[35vw]  max-h-[700px] max-w-[600px]  top-[40vh] cursor-pointer opacity-0  hover:opacity-100 transition-all ease-in absolute"
               />
             )}
-          </div>
-          <div>
+          </Link>
+          <Link href="projects/topgal_u" className="cursor-auto">
             <Image
               alt="Topgal Picture"
               src={TopGalPicture}
@@ -78,9 +81,9 @@ export default function ProjectsSection({
                 className="h-[25vw] w-[20vw]   left-[62vw] top-[30vh]  max-w-[600px] max-h-[770px] absolute  cursor-pointer opacity-0 hover:opacity-100 transition-all ease-in "
               />
             )}
-          </div>
+          </Link>
 
-          <div>
+          <Link href="projects/pepino" className="cursor-auto ">
             <Image
               alt="Pepino Picture"
               src={PepinoPicture}
@@ -93,12 +96,12 @@ export default function ProjectsSection({
                 className="h-[25vw] w-[25vw] max-h-[700px] max-w-[700px]  -right-[15vw]  top-[20vh] absolute  cursor-pointer opacity-0 hover:opacity-100 transition-all ease-in "
               />
             )}
-          </div>
+          </Link>
         </section>
         <section className="horizontal-section min-h-screen w-screen relative z-1">
-          <div>
+          <Link href="projects/famufest">
             <Image
-              alt="Seventyfour picture"
+              alt="Famufest picture"
               src={FamuFestPicture}
               className="image  h-[32vw] w-[24vw] max-w-[600px] max-h-[770px]  left-[23vw] top-[30vh] absolute  "
             />
@@ -109,10 +112,11 @@ export default function ProjectsSection({
                 className="h-[32vw] w-[24vw] max-w-[600px] max-h-[770px]  left-[23vw] top-[30vh]  cursor-pointer opacity-0 hover:opacity-100 transition-all ease-in absolute"
               />
             )}
-          </div>
-          <div>
+          </Link>
+
+          <Link href="projects/mnml" className="cursor-auto">
             <Image
-              alt="Seventyfour picture"
+              alt="MNML picture"
               src={MNMLPicture}
               className="image  h-[24vw] w-[24vw] max-h-[700px] max-w-[700px]  left-[55vw] top-[20vh] absolute  "
             />
@@ -123,8 +127,8 @@ export default function ProjectsSection({
                 className="h-[24vw] w-[24vw] max-h-[700px] max-w-[700px]  left-[55vw] top-[20vh]  cursor-pointer opacity-0 hover:opacity-100 transition-all ease-in absolute"
               />
             )}
-          </div>
-          <div>
+          </Link>
+          <Link href="projects/hostivio" className="cursor-auto">
             <Image
               alt="Hostivio picture"
               src={HostivioPicture}
@@ -137,7 +141,21 @@ export default function ProjectsSection({
                 className="h-[20vw] w-[25vw] max-h-[700px] max-w-[700px]  left-[87vw] top-[45vh]  cursor-pointer opacity-0 hover:opacity-100 transition-all ease-in absolute"
               />
             )}
-          </div>
+          </Link>
+          <Link href="projects/notz" className="cursor-auto">
+            <Image
+              alt="Notz picture"
+              src={notzPicture}
+              className="image  h-[20vw] w-[25vw] max-h-[700px] max-w-[700px]  left-[119vw] top-[25vh] absolute  "
+            />
+            {isVisible && (
+              <Image
+                alt="Hostivio animation"
+                src={notzGIF}
+                className="h-[20vw] w-[25vw] max-h-[700px] max-w-[700px]  left-[119vw] top-[25vh]  cursor-pointer opacity-0 hover:opacity-100 transition-all ease-in absolute"
+              />
+            )}
+          </Link>
         </section>
         <section className="horizontal-section min-h-screen w-[50vw] relative "></section>
 
