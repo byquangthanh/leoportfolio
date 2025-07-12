@@ -120,15 +120,14 @@ const projects = {
     images: ["notz 1.webp", "notz 2.webp", "notz 3.webp"],
   },
 };
-
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const { id } = params;
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { id } = await params;
   const project = projects[id as keyof typeof projects];
 
   if (!project) {

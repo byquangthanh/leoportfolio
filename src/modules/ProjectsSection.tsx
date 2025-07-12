@@ -171,7 +171,7 @@ export default function ProjectsSection({
         {/* Add the final section inside the horzontal container*/}
         <section className="horizontal-section min-h-screen w-screen relative bg-black  z-0">
           <div className="flex-col flex items-center justify-center h-full p-8">
-            <h4 className="text-8xl text-white">Let's connect!</h4>
+            <h4 className="text-8xl text-white">Let&apos;s connect!</h4>
             <br />
             <p className="text-lg">
               Write me an email or send me a DM on instagram!
