@@ -66,7 +66,10 @@ export default function MainPage() {
   return (
     <>
       <Navbar />
-      {/* <LogoPage /> */}
+      <div className="block md:hidden">
+        <LogoPage />
+      </div>
+
       <div className="hidden md:block">
         <ProjectsSection
           containerRef={containerRef}
