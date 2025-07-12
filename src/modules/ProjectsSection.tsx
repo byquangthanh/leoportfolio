@@ -19,6 +19,7 @@ import notzPicture from "../../public/assets/notz.webp";
 import notzGIF from "../../public/assets/notz.gif";
 import { Ref } from "react";
 import Link from "next/link";
+import Logo from "../../public/assets/leologo.svg";
 
 interface ProjectSectionProps {
   containerRef: Ref<HTMLDivElement> | undefined;
@@ -48,6 +49,10 @@ export default function ProjectsSection({
   return (
     <div ref={containerRef} className="relative z-10">
       <div ref={sectionsRef} className="flex w-[350vw]">
+        <section className="min-h-[100dvh] w-full flex items-end justify-center fixed z-1 px-8 mix-blend-difference bg-white">
+          <Image src={Logo} alt={"Leo Logo"} className="w-full" />
+          <p className="text-white">a</p>
+        </section>
         <section className="horizontal-section min-h-screen w-screen relative z-2">
           <Link href="projects/seventyfour" className="cursor-auto">
             <Image
@@ -169,9 +174,9 @@ export default function ProjectsSection({
         <section className="horizontal-section min-h-screen w-[50vw] relative "></section>
 
         {/* Add the final section inside the horzontal container*/}
-        <section className="horizontal-section min-h-screen w-screen relative bg-black  z-0">
+        <section className="horizontal-section min-h-screen w-screen relative bg-white   text-black">
           <div className="flex-col flex items-center justify-center h-full p-8">
-            <h4 className="text-8xl text-white">Let&apos;s connect!</h4>
+            <h4 className="text-8xl">Let&apos;s connect!</h4>
             <br />
             <p className="text-lg">
               Write me an email or send me a DM on instagram!

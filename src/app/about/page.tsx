@@ -21,7 +21,7 @@ export default function page() {
               <br className="hidden sm:block" />
               <br className="hidden sm:block" />
             </p>
-            <div className=" flex-row sm:flex-col flex  sm:group text-black font-bold gap-4 sm:gap-0">
+            <div className=" flex-row sm:flex-col flex  group text-black font-bold gap-4 sm:gap-0">
               <span className="hover:opacity-50 transition-all ease-in cursor-pointer pb-2">
                 CV
               </span>
