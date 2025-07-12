@@ -2,7 +2,6 @@ import LogoPage from "@/modules/LogoPage";
 import Navbar from "@/modules/Navbar";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import seventyfourpic from "../../../../public/assets/seventyfour@2x.webp";
 const projects = {
   seventyfour: {
     id: "seventyfour",
@@ -141,31 +140,30 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <Navbar />
       <LogoPage />
 
-      <section className="p-8 z-10 bg-white/0 min-h-screen w-screen absolute grid grid-cols-3 items-center">
-        <div className="flex-row flex col-span-2 gap-[8vw]">
-          <p className="text-black text-lg font-bold pb-20 leading-6">
+      <section className="p-8 z-10 bg-white/0 min-h-screen w-screen absolute flex flex-col sm:flex-row sm:items-center">
+        <div className="flex-col sm:flex-row flex  sm:gap-[8vw] sm:fixed pt-24 sm:pt-0">
+          <p className="text-black text-lg font-bold pb-8 sm:pb-20 leading-6">
             {project.title} <br />
             {project.subtitle}
           </p>
-          <div className="text-black text-lg  pb-20 leading-6 flex flex-col it max-w-[25vw]">
+          <div className="text-black text-lg  pb-20 leading-6   sm:max-w-[25vw] w-full">
             <p className="whitespace-pre-line">{project.description}</p>
           </div>
         </div>
-        <div>
-          <div className="col-span-1  flex justify-end flex-col top-1/5  absolute gap-8">
-            {project.images.map((item, index) => {
-              return (
-                <Image
-                  key={index}
-                  className="w-[32vw] h-[32vw] object-contain"
-                  src={`/assets/${item}`}
-                  alt="project pic"
-                  width={500} // Add these
-                  height={500} // Add these
-                />
-              );
-            })}
-          </div>
+
+        <div className=" flex  justify-end flex-col right-8 gap-8 items-center  sm:absolute">
+          {project.images.map((item, index) => {
+            return (
+              <Image
+                key={index}
+                className="w-[70vw] h-[70vw] sm:h-[32vw] sm:w-[32vw] object-contain"
+                src={`/assets/${item}`}
+                alt="project pic"
+                width={500}
+                height={500}
+              />
+            );
+          })}
         </div>
       </section>
     </>

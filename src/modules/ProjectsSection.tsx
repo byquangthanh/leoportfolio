@@ -30,6 +30,15 @@ export default function ProjectsSection({
   sectionsRef,
 }: ProjectSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const [isCopiedVisible, setIsCopiedVisible] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("leo@seventyfour.work");
+    setIsCopiedVisible(true);
+    setTimeout(() => {
+      setIsCopiedVisible(false);
+    }, 1000);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -160,9 +169,36 @@ export default function ProjectsSection({
         <section className="horizontal-section min-h-screen w-[50vw] relative "></section>
 
         {/* Add the final section inside the horzontal container*/}
-        <section className="horizontal-section min-h-screen w-screen relative bg-black">
-          <div className="flex items-center justify-center h-full p-8">
-            <h1 className="text-9xl text-white">Lets connect!</h1>
+        <section className="horizontal-section min-h-screen w-screen relative bg-black  z-0">
+          <div className="flex-col flex items-center justify-center h-full p-8">
+            <h4 className="text-8xl text-white">Let's connect!</h4>
+            <br />
+            <p className="text-lg">
+              Write me an email or send me a DM on instagram!
+            </p>
+            <br />
+            <div className="flex-row flex gap-2">
+              <p
+                onClick={() => {
+                  copyEmail();
+                }}
+                className="hover:opacity-50 transition-all ease-in-out duration-200 cursor-pointer text-lg text-center"
+              >
+                leo@seventyfour.work
+              </p>
+              {isCopiedVisible && (
+                <p className="text-white transition-all ease-in duration-300  text-lg ">
+                  copied!
+                </p>
+              )}
+            </div>
+            <a
+              href="https://www.instagram.com/leophamie/"
+              target="_blank"
+              className="hover:opacity-50 transition-all ease-in-out duration-200 cursor-pointer text-lg text-center"
+            >
+              @leophamie
+            </a>
           </div>
         </section>
       </div>

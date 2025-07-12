@@ -9,7 +9,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/modules/Navbar";
 import LogoPage from "@/modules/LogoPage";
 import ProjectsSection from "@/modules/ProjectsSection";
-import { isMobile } from "react-device-detect";
 import ProjectsSectionMobile from "@/modules/ProjectsSectionMobile";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
