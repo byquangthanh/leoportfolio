@@ -145,12 +145,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {project.title} <br />
             {project.subtitle}
           </p>
-          <div className="text-black text-lg  pb-20 leading-6   sm:max-w-[25vw] w-full">
+          <div className="text-black text-lg  pb-20 leading-6   sm:max-w-[30vw] w-full">
             <p className="whitespace-pre-line">{project.description}</p>
           </div>
         </div>
 
-        <div className=" flex  justify-end flex-col right-8 gap-8 items-center  sm:absolute">
+        <div className=" flex  justify-end flex-col right-8 gap-8 items-center  sm:absolute sm:top-1/4">
           {project.images.map((item, index) => {
             return (
               <Image
