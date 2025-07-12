@@ -43,7 +43,7 @@ export default function page() {
           </div>
           <div className="text-black text-lg  pb-8 sm:pb-20 leading-6 flex flex-col  sm:max-w-[25vw]">
             <p>
-              I am Leo Pham, a vietnamese graphic designer born in the Czech
+              I am Leo Pham, a Vietnamese graphic designer born in the Czech
               Republic, currently based in Prague. I specialize in logos,
               branding, visual identities, motion design, posters and in my free
               time I play basketball.
@@ -51,7 +51,7 @@ export default function page() {
             <br />
 
             <p>
-              In my work I blend structure with creativity.
+              In my work, I blend structure with creativity.
               <br /> I often draw inspiration from cultural contrasts, everyday
               moments, and timeless design principles
             </p>
